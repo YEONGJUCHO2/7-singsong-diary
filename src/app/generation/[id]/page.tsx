@@ -5,6 +5,8 @@ import { useParams, useRouter } from 'next/navigation'
 import { useGenerationStatus } from '@/hooks/use-generation-status'
 import { WaveformAnimation } from '@/components/music/WaveformAnimation'
 import { StatusDot } from '@/components/music/StatusDot'
+import { MusicPlayer } from '@/components/music/MusicPlayer'
+import { DiaryCard } from '@/components/diary/DiaryCard'
 
 export default function GenerationPage() {
   const { id } = useParams<{ id: string }>()
@@ -83,8 +85,49 @@ export default function GenerationPage() {
 
   if (status === 'completed' && generation.audio_url && generation.title) {
     return (
-      <div className="max-w-2xl mx-auto px-4 py-16 text-center">
-        <p className="text-on-surface-variant">결과 로딩 중...</p>
+      <div className="max-w-2xl mx-auto px-4 py-16 flex flex-col items-center gap-8">
+        <div className="text-center space-y-3">
+          <h1 className="text-headline text-primary">
+            당신의 일기가 노래가 되었습니다
+          </h1>
+          <StatusDot status="completed" />
+        </div>
+
+        <MusicPlayer audioUrl={generation.audio_url} title={generation.title} />
+
+        <DiaryCard
+          content={generation.diary_entries.content}
+          date={generation.diary_entries.created_at}
+        />
+
+        {generation.options && Object.keys(generation.options).length > 0 && (
+          <div className="flex flex-wrap gap-2">
+            {Object.values(generation.options).map((value) => (
+              <span
+                key={value as string}
+                className="px-3 py-1 bg-surface-container-highest rounded-sm text-sm text-on-surface-variant"
+              >
+                {value as string}
+              </span>
+            ))}
+          </div>
+        )}
+
+        <div className="flex gap-3 w-full">
+          <button
+            onClick={() => router.push(`/?diary=${generation.diary_entry_id}`)}
+            className="flex-1 px-6 py-3 bg-surface-container-highest text-primary rounded-xl hover:bg-surface-variant transition-colors text-center"
+          >
+            다른 스타일로 다시 만들기
+          </button>
+          <button
+            onClick={() => router.push('/')}
+            className="flex-1 px-6 py-3 rounded-full font-extrabold text-on-primary-container text-center"
+            style={{ background: 'linear-gradient(135deg, #ffbf00, #e6a102)' }}
+          >
+            새 일기 쓰기
+          </button>
+        </div>
       </div>
     )
   }
