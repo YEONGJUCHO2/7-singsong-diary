@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;400;500;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary-container": "#eec540",
+                    "on-tertiary": "#3c2f00",
+                    "primary": "#ffe2ab",
+                    "error-container": "#93000a",
+                    "surface-container-high": "#2a2a2a",
+                    "on-background": "#e5e2e1",
+                    "on-primary-container": "#6d5000",
+                    "on-error": "#690005",
+                    "inverse-surface": "#e5e2e1",
+                    "on-secondary": "#432c00",
+                    "on-secondary-container": "#593c00",
+                    "on-error-container": "#ffdad6",
+                    "surface-container-lowest": "#0e0e0e",
+                    "surface-container-highest": "#353534",
+                    "secondary-container": "#e6a102",
+                    "on-primary-fixed-variant": "#5c4300",
+                    "tertiary-fixed": "#ffe087",
+                    "primary-fixed": "#ffdfa0",
+                    "tertiary": "#ffe396",
+                    "on-primary-fixed": "#261a00",
+                    "secondary-fixed": "#ffdead",
+                    "on-surface": "#e5e2e1",
+                    "surface-tint": "#fbbc00",
+                    "surface-container": "#201f1f",
+                    "background": "#131313",
+                    "inverse-primary": "#795900",
+                    "surface-bright": "#393939",
+                    "primary-container": "#ffbf00",
+                    "on-secondary-fixed-variant": "#604100",
+                    "on-tertiary-fixed-variant": "#574500",
+                    "outline": "#9c8f78",
+                    "surface-dim": "#131313",
+                    "on-tertiary-container": "#675200",
+                    "surface": "#131313",
+                    "outline-variant": "#504532",
+                    "error": "#ffb4ab",
+                    "secondary-fixed-dim": "#ffba3a",
+                    "on-tertiary-fixed": "#241a00",
+                    "secondary": "#ffbe4a",
+                    "on-secondary-fixed": "#281900",
+                    "on-primary": "#402d00",
+                    "surface-container-low": "#1c1b1b",
+                    "inverse-on-surface": "#313030",
+                    "primary-fixed-dim": "#fbbc00",
+                    "surface-variant": "#353534",
+                    "on-surface-variant": "#d4c5ab",
+                    "tertiary-fixed-dim": "#ebc23e"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Manrope"],
+                    "body": ["Manrope"],
+                    "label": ["Manrope"]
+            }
+          },
+        }
+      }
+    </script>
+<style>
+        body { font-family: 'Manrope', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .waveform-bar {
+            width: 3px;
+            background-color: #ffbf00;
+            border-radius: 2px;
+            margin-right: 2px;
+        }
+        .waveform-bar.dimmed {
+            background-color: #402d00;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen pb-24">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-[#131313]/70 backdrop-blur-xl flex justify-between items-center px-6 h-16 w-full shadow-[0_10px_40px_rgba(255,191,0,0.06)]">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full overflow-hidden bg-surface-container-highest">
+<img alt="user profile picture" class="w-full h-full object-cover" data-alt="close-up portrait of a creative individual in a dark studio setting with warm amber backlighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAxDVgVOzCYTka7TDATY_vJuJnXbsiXGwftJRmQXMIQEr4SJWHv_ZtDy_42TxSFS2eVznP3H34DeTgllJc9mgNH8etQ3xf6RWbeNWOXhwaC1HxYwvbuD-h4EnVpyibN54w_fWIWnxwfMT1T2pZo5TknGXdYnd9HELaLAvt8yg51Gsv48LqjitVOwh9yww2MNNRCkCBpiJV0XD_6g88Bn4I4HHxqV357YUrySfefzCHO1cEV6Ti0Vf3EtXXfmKMQpfAzz1k8DGxbJqSt"/>
+</div>
+<h1 class="text-xl font-bold tracking-tighter text-[#ffbf00] font-['Manrope']">싱송 다이어리</h1>
+</div>
+<button class="text-[#ffe2ab] hover:opacity-80 transition-opacity active:scale-95 duration-200">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+</button>
+</header>
+<main class="pt-24 px-6 max-w-2xl mx-auto">
+<!-- Editorial Header -->
+<div class="mb-12">
+<span class="text-xs font-bold uppercase tracking-[0.2em] text-primary-container mb-2 block">Archive</span>
+<h2 class="text-5xl font-extrabold tracking-tight leading-tight">HISTORY</h2>
+<p class="text-on-surface-variant/60 mt-2 font-medium">Your musical journey, preserved in frequency.</p>
+</div>
+<!-- History Entries - Bento/Asymmetric Rhythm -->
+<div class="space-y-8">
+<!-- Entry Card 1 -->
+<section class="group relative bg-surface-container-low rounded-xl p-6 transition-all duration-300 hover:bg-surface-container shadow-sm border border-outline-variant/10">
+<div class="flex justify-between items-start mb-4">
+<div>
+<span class="label-md block text-[10px] uppercase tracking-widest text-primary/60 font-bold mb-1">OCTOBER 24, 2023</span>
+<h3 class="text-2xl font-bold text-primary tracking-tight">Midnight Resonance</h3>
+</div>
+<button class="w-12 h-12 rounded-full bg-primary-container flex items-center justify-center text-on-primary-container active:scale-90 transition-transform shadow-[0_0_20px_rgba(255,191,0,0.2)]">
+<span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</button>
+</div>
+<p class="text-on-surface-variant/80 leading-relaxed mb-6 font-medium line-clamp-2 italic">
+                    "오늘 새벽에 갑자기 떠오른 멜로디. 조금은 쓸쓸하지만 끝에는 희망이 보이는 코드로 마무리하고 싶다. 기타 톤을 조금 더 로우파이하게 잡아볼까..."
+                </p>
+<!-- Amber Waveform Component -->
+<div class="flex items-end h-12 w-full gap-[2px]">
+<div class="waveform-bar h-[20%]"></div>
+<div class="waveform-bar h-[40%]"></div>
+<div class="waveform-bar h-[70%]"></div>
+<div class="waveform-bar h-[50%]"></div>
+<div class="waveform-bar h-[90%]"></div>
+<div class="waveform-bar h-[100%]"></div>
+<div class="waveform-bar h-[60%]"></div>
+<div class="waveform-bar h-[80%]"></div>
+<div class="waveform-bar h-[40%]"></div>
+<div class="waveform-bar h-[30%]"></div>
+<div class="waveform-bar h-[60%]"></div>
+<div class="waveform-bar h-[20%]"></div>
+<div class="waveform-bar h-[50%]"></div>
+<div class="waveform-bar h-[80%]"></div>
+<div class="waveform-bar h-[40%]"></div>
+<div class="waveform-bar h-[20%]"></div>
+<div class="waveform-bar h-[60%]"></div>
+<div class="waveform-bar h-[90%]"></div>
+<div class="waveform-bar h-[70%]"></div>
+<div class="waveform-bar h-[50%]"></div>
+<div class="waveform-bar h-[30%] dimmed"></div>
+<div class="waveform-bar h-[40%] dimmed"></div>
+<div class="waveform-bar h-[20%] dimmed"></div>
+<div class="waveform-bar h-[60%] dimmed"></div>
+<div class="waveform-bar h-[40%] dimmed"></div>
+<div class="waveform-bar h-[70%] dimmed"></div>
+<div class="waveform-bar h-[30%] dimmed"></div>
+<div class="waveform-bar h-[50%] dimmed"></div>
+</div>
+<div class="mt-6 flex gap-4 text-[10px] uppercase tracking-widest font-bold text-on-surface-variant/40">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">timer</span> 02:45</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">speed</span> 84 BPM</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">music_note</span> E MINOR</span>
+</div>
+</section>
+<!-- Entry Card 2 - Subtle Asymmetry Variation -->
+<section class="group relative bg-surface-container-lowest rounded-xl p-6 transition-all duration-300 hover:bg-surface-container-low shadow-sm border border-outline-variant/5">
+<div class="flex justify-between items-start mb-4">
+<div>
+<span class="label-md block text-[10px] uppercase tracking-widest text-primary/60 font-bold mb-1">OCTOBER 22, 2023</span>
+<h3 class="text-2xl font-bold text-primary tracking-tight">Rainy Street Echo</h3>
+</div>
+<button class="w-12 h-12 rounded-full bg-surface-container-highest flex items-center justify-center text-primary-container active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-3xl">play_arrow</span>
+</button>
+</div>
+<p class="text-on-surface-variant/80 leading-relaxed mb-6 font-medium line-clamp-2">
+                    "빗소리와 함께 녹음된 어쿠스틱 피아노 스케치. 페달 밟는 소리가 생각보다 크게 들어갔지만 그게 더 현장감 있어서 좋다."
+                </p>
+<!-- Amber Waveform Component (Static) -->
+<div class="flex items-end h-10 w-full gap-[2px] opacity-60">
+<div class="waveform-bar h-[10%]"></div>
+<div class="waveform-bar h-[30%]"></div>
+<div class="waveform-bar h-[20%]"></div>
+<div class="waveform-bar h-[50%]"></div>
+<div class="waveform-bar h-[80%]"></div>
+<div class="waveform-bar h-[30%]"></div>
+<div class="waveform-bar h-[40%]"></div>
+<div class="waveform-bar h-[60%]"></div>
+<div class="waveform-bar h-[20%]"></div>
+<div class="waveform-bar h-[10%]"></div>
+<div class="waveform-bar h-[40%]"></div>
+<div class="waveform-bar h-[70%]"></div>
+<div class="waveform-bar h-[50%]"></div>
+<div class="waveform-bar h-[30%]"></div>
+<div class="waveform-bar h-[60%]"></div>
+<div class="waveform-bar h-[20%]"></div>
+<div class="waveform-bar h-[80%]"></div>
+<div class="waveform-bar h-[40%]"></div>
+<div class="waveform-bar h-[20%]"></div>
+<div class="waveform-bar h-[30%]"></div>
+<div class="waveform-bar h-[50%]"></div>
+<div class="waveform-bar h-[70%]"></div>
+<div class="waveform-bar h-[40%]"></div>
+<div class="waveform-bar h-[10%]"></div>
+</div>
+<div class="mt-6 flex gap-4 text-[10px] uppercase tracking-widest font-bold text-on-surface-variant/40">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">timer</span> 01:12</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">speed</span> 68 BPM</span>
+</div>
+</section>
+<!-- Entry Card 3 -->
+<section class="group relative bg-surface-container-low rounded-xl p-6 transition-all duration-300 hover:bg-surface-container shadow-sm border border-outline-variant/10">
+<div class="flex justify-between items-start mb-4">
+<div>
+<span class="label-md block text-[10px] uppercase tracking-widest text-primary/60 font-bold mb-1">OCTOBER 15, 2023</span>
+<h3 class="text-2xl font-bold text-primary tracking-tight">Morning Coffee Chord</h3>
+</div>
+<button class="w-12 h-12 rounded-full bg-surface-container-highest flex items-center justify-center text-primary-container active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-3xl">play_arrow</span>
+</button>
+</div>
+<p class="text-on-surface-variant/80 leading-relaxed mb-6 font-medium line-clamp-2">
+                    "가볍고 경쾌한 스트럼. 광고 CM송 느낌이 나는데 조금 더 전개해보면 재미있는 팝 트랙이 될 것 같다."
+                </p>
+<!-- Amber Waveform Component -->
+<div class="flex items-end h-12 w-full gap-[2px]">
+<div class="waveform-bar h-[20%]"></div>
+<div class="waveform-bar h-[40%]"></div>
+<div class="waveform-bar h-[70%]"></div>
+<div class="waveform-bar h-[90%]"></div>
+<div class="waveform-bar h-[100%]"></div>
+<div class="waveform-bar h-[60%]"></div>
+<div class="waveform-bar h-[40%]"></div>
+<div class="waveform-bar h-[20%]"></div>
+<div class="waveform-bar h-[60%]"></div>
+<div class="waveform-bar h-[90%]"></div>
+<div class="waveform-bar h-[100%]"></div>
+<div class="waveform-bar h-[60%]"></div>
+<div class="waveform-bar h-[40%]"></div>
+<div class="waveform-bar h-[20%]"></div>
+<div class="waveform-bar h-[60%]"></div>
+<div class="waveform-bar h-[90%]"></div>
+<div class="waveform-bar h-[70%]"></div>
+<div class="waveform-bar h-[50%]"></div>
+</div>
+<div class="mt-6 flex gap-4 text-[10px] uppercase tracking-widest font-bold text-on-surface-variant/40">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">timer</span> 00:45</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">speed</span> 120 BPM</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">music_note</span> G MAJOR</span>
+</div>
+</section>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center py-3 pb-safe px-8 bg-[#131313]/70 backdrop-blur-xl z-50 rounded-t-xl shadow-[0_-4px_20px_rgba(0,0,0,0.5)]">
+<a class="flex flex-col items-center justify-center text-[#ffe2ab]/50 px-6 py-1.5 hover:text-[#ffbf00] transition-colors active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-['Manrope'] text-[10px] uppercase tracking-[0.05em] font-medium mt-1">Main</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-[#ffbf00] text-[#131313] rounded-xl px-6 py-1.5 active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="history">history</span>
+<span class="font-['Manrope'] text-[10px] uppercase tracking-[0.05em] font-medium mt-1">History</span>
+</a>
+</nav>
+</body></html>
